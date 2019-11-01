@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap');
+
+:root {
+    --bgColor: black;
+    --txtColor: white;
+    --loadingAngle: 90deg;
+    --percent1: 35%;
+    --percent2: 40%;
+    --percent3: 60%;
+    --percent4: 100%;
+}
+
+@keyframes spin {
+    15% {
+        --loadingAngle: 150deg;
+    }
+    30% {
+        --loadingAngle: 200deg;
+    }
+    40% {
+        --loadingAngle: 220deg;
+    }
+    50% {
+        --loadingAngle: 270deg;
+        --bgColor: white;
+        --txtColor: black;
+    }
+    65% {
+        --loadingAngle: 300deg;
+    }
+    80% {
+        --loadingAngle: 360deg;
+    }
+    90% {
+        --loadingAngle: 400deg;
+    }
+    100% {
+        --loadingAngle: 450deg;
+        --bgColor: black;
+        --txtColor: white;
+    }
+}
+
+@keyframes fade {
+    50% {
+        background-color: white;
+        color: black
+    }
+    100% {
+        background-color: black;
+        color: white;
+    }
+}
+
+*::before,
+*::after {
+    display: block;
+    content: "";
+    position: absolute;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgColor);
+    color: var(--txtColor);
+    animation: fade 6s infinite ease-out;
+}
+
+h1 {
+    font-family: 'Yeon Sung', cursive;
+    font-weight: 800;
+    font-size: 5em;
+}
+
+.spinner {
+    background: conic-gradient(from var(--loadingAngle),
+            var(--txtColor) var(--percent1),
+            var(--bgColor) var(--percent2),
+            var(--bgColor) var(--percent3),
+            var(--txtColor) var(--percent4));
+    height: 10em;
+    width: 10em;
+    display: block;
+    border-radius: 50%;
+    animation: spin 1.5s infinite steps(20);
+}
+
+.spinner::before {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    margin: 1em;
+    animation: fade 6s infinite ease-out;
+    background: black;
+}
