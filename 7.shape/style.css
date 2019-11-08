@@ -1,0 +1,70 @@
+body {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #ffe;
+}
+
+.root {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(#ffc, #ffe);
+  transition: background 0.6s ease-in-out;
+}
+
+.edge {
+  background: blue;
+  clip-path: url(#edge);
+}
+
+.edgeflip1 {
+  background: radial-gradient(circle at 60% 75%, blue 50%, #0F5);
+  clip-path: url(#edgeflip1);
+}
+
+.edgeflip2 {
+  background: radial-gradient(circle at 60% 45%, transparent 40%, #0F5),
+    radial-gradient(circle at 60% 95%, blue 40%, #0F5);
+  clip-path: url(#edgeflip2);
+}
+
+.edgeflip3 {
+  background: radial-gradient(circle at 60% 45%, transparent 40%, #0F5),
+    radial-gradient(circle at 60% 95%, blue 40%, #0F5);
+  clip-path: url(#edgeflip3);
+}
+
+.edgeflip4 {
+  background: radial-gradient(circle at 60% 45%, transparent 40%, #0F5),
+    radial-gradient(circle at 60% 95%, blue 40%, #0F5);
+  clip-path: url(#edgeflip3);
+  transform: rotate(60deg);
+  transform-origin: 45% 35%;
+}
+
+.transforming-edge {
+  background: radial-gradient(circle at 60% 10%, transparent 30%, #227 30%, #227 55%, blue 55%, blue 60%, skyblue 60%, skyblue 65%, #0F5 68%);
+  clip-path: url(#transforming-edge);
+}
+
+.newEdge1 {
+  background: radial-gradient(circle at 80% 60%, #227 30%, #227 45%, blue 55%, blue 60%, skyblue 60%, skyblue 65%, #0F5 68%);
+  clip-path: url(#newEdge1);
+}
+
+.newEdge2 {
+  background: radial-gradient(circle at 80% 60%, #227 30%, #227 45%, blue 55%, blue 60%, skyblue 60%, skyblue 65%, #0F5 68%);
+  clip-path: url(#newEdge1);
+  transform: rotate(40deg);
+}
+
+.newEdge {
+  background: radial-gradient(ellipse at 60% 10%, #0F5 15%, skyblue 40%, transparent 55%),
+    radial-gradient(circle at 60% 45%, #007 20%, #007 45%, blue 55%, blue 70%, skyblue 75%);
+  clip-path: url(#newEdge);
+}
