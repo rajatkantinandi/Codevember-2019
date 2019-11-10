@@ -1,0 +1,18 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  margin: 0;
+  background: 
+    radial-gradient(orange 20%,transparent),
+    repeating-conic-gradient(orangered 10%,orangered 15%,orange 15%,orange 20%);
+}
+
+.zdog-canvas {
+  cursor: move;
+}
