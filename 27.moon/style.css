@@ -1,0 +1,86 @@
+body {
+ margin: 0;
+ padding: 0;
+ width: 100vw;
+ height: 100vh;
+ overflow: hidden;
+}
+
+:root {
+ --sunX: 50%;
+ --sunY: 30%;
+ --sunColor: black;
+ --glowColor: black;
+ --skyColor1: black;
+ --skyColor2: black;
+ --starDisplay: none;
+ --dessert1: black;
+ --dessert2: black;
+}
+
+.day {
+ --sunColor: yellow;
+ --glowColor: rgba(255,255,0,0.3);
+ --skyColor1: lightcyan;
+ --skyColor2: skyblue;
+ --starDisplay: none;
+ --dessert1: #FB5;
+ --dessert2: #A75;
+}
+
+.night {
+ --sunColor: white;
+ --glowColor: rgba(25,25,20,0.9);
+ --skyColor1: #223;
+ --skyColor2: black;
+ --starDisplay: block;
+ --dessert1: #443;
+ --dessert2: #110;
+}
+
+.star {
+ position: absolute;
+ height: 1px;
+ width: 1px;
+ border-radius: 50%;
+ box-shadow: 0 0 5px 0 rgba(100,100,100,0.6);
+ background: white;
+}
+
+.sky {
+ width: 100%;
+ height: 100%;
+ background: radial-gradient(circle at var(--sunX) var(--sunY),var(--sunColor) 3%,var(--glowColor) 5%, var(--skyColor1) 15%, var(--skyColor2));
+ position: relative;
+}
+
+.night .sky {
+ background: radial-gradient(circle at var(--sunX) var(--sunY),var(--sunColor) 3%, var(--glowColor) 5%, var(--skyColor1) 5%, var(--skyColor2));
+}
+
+.disclaimer {
+ position: fixed;
+ top: auto;
+ left: auto;
+ bottom: 20px;
+ right: 20px;
+ color: white;
+ background: black;
+ padding: 5px 10px;
+ border-radius: 5px;
+ z-index: 2;
+}
+.disclaimer a {
+ color: skyblue;
+ text-decoration: none;
+}
+.dessert {
+ height: 50%;
+ width: 110vw;
+ background: repeating-radial-gradient(ellipse at -10% 130%,var(--dessert2) 1%,transparent 20%,var(--dessert1) 30%),repeating-radial-gradient(ellipse at 150% 50%,var(--dessert1) 5px,transparent 10px,var(--dessert2) 18px);
+ background-color: var(--dessert2);
+ border-radius: 0 100% 0 0/0 40% 0 0;
+ position: relative;
+ z-index: 1;
+ top: -50%;
+}
